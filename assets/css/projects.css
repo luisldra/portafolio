@@ -10,12 +10,13 @@ body, html {
 }
 
 h2 {
-    font-size: 2rem !important;
+    font-size: 3rem !important;
     margin-bottom: 1rem !important;
+    color: #00171F;
 }
 
 h3 {
-    font-size: 1.5rem !important;
+    font-size: 2rem !important;
     margin:0.5rem !important;
 }
 
@@ -41,7 +42,7 @@ p {
 .card {
     position: relative;
     width: 400px;
-    height: 300px;
+    height: 350px;
     perspective: 1000px;
     margin: 10px; /* Ajusta el margen para mayor separación entre tarjetas */
     color: white;

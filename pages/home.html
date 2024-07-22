@@ -5,17 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/home.css">
     <link rel="stylesheet" href="../assets/css/reset.css">
-
 </head>
 <body>
     <section id="home" class="home">
         <div class="home__content">
             <h1 data-key="welcome">Hola! Soy <span>Luis David Rodriguez Arias</span></h1>
             <h2 data-key="role">ESTUDIANTE | Ingenieria de Sistemas y Computación</h2>
-            <p data-key="description">Estudiante de Ingenieria de Sistemas y Computacion apasionado por el Desarrollo Web. Como persona amante a los diseños intuitivos y estéticamente agradables busco crear proyectos que brinden la mejor experiencia para el usuario.</p>
+            <p data-key="description">Estudiante de Ingenieria de Sistemas y Computacion apasionado por el Desarrollo Web.</p>
             <div class="buttons">
-                <a href="#" class="btn" data-key="download-cv">DESCARGAR CV</a>
-                <a href="#" class="btn" data-key="contact">CONTACTO</a>
+                <a href="../assets/docs/RodríguezA_LuisD_CV.pdf" class="btn" data-key="downloadCV" target="_blank">DESCARGAR CV</a>
+                <a href="#contact" class="btn" data-key="contact" id="contact-link">CONTACTO</a>
             </div>
         </div>
         <div class="home__image">
@@ -28,12 +27,24 @@
     </div>
 
     <script>
+        // Manejar clic en el enlace "CONTACTO" en home.html
+        document.getElementById('contact-link').addEventListener('click', function(event) {
+            event.preventDefault();
+            parent.postMessage('scrollToContact', '*');
+        });
+
+        // Recibir mensajes para cambiar el idioma
         window.addEventListener('message', function(event) {
-            if (event.data === 'scrollToSection') {
-                document.getElementById('home').scrollIntoView({ behavior: 'smooth' });
+            if (event.data.lang && event.data.translations) {
+                const elements = document.querySelectorAll('[data-key]');
+                elements.forEach(el => {
+                    const key = el.getAttribute('data-key');
+                    if (event.data.translations[key]) {
+                        el.innerHTML = event.data.translations[key];
+                    }
+                });
             }
         });
     </script>
-
 </body>
 </html>

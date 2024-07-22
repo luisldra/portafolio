@@ -29,12 +29,12 @@ html, body {
 }
 
 .aboutMe__content h2 {
-    font-size: 2rem;
+    font-size: 3rem;
     margin-bottom: 1rem;
 }
 
 .aboutMe__content h3 {
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin-bottom: 1rem;
     color: #c6a564; /* Cambia este color si es necesario */
 }

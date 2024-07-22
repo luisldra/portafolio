@@ -9,24 +9,24 @@
 </head>
 <body>
     <section id="contact" class="contact">
-        <h2>Contacto</h2>
+        <h2 data-key="titleContact"></h2>
 
         <!-- Apartado para el correo electrónico -->
         <div class="contact-info">
-            <p>Puede contactarme directamente a través de mi correo electrónico:</p>
+            <p data-key="paragraph1"></p>
             <p><a href="mailto:luisldra@gmail.com">luisldra@gmail.com</a></p>
         </div>
 
-        <p>O puede completar el siguiente formulario y me pondré en contacto con usted lo antes posible.</p>
+        <p data-key="paragraph2"></p>
         
         
         
         <form id="contactForm" action="https://formspree.io/f/xqazanwj" method="post">
-            <input type="text" name="name" placeholder="Nombre " required>
-            <input type="email" name="email" placeholder="E-mail" required>
-            <input type="text" name="subject" placeholder="Asunto " required>
-            <textarea name="message" rows="4" placeholder="Mensaje " required></textarea>
-            <button type="submit">Enviar</button>
+            <input type="text" name="name" data-placeholder-key="placeholderName" required>
+            <input type="email" name="email" data-placeholder-key="placeholderEmail" required>
+            <input type="text" name="subject" data-placeholder-key="placeholderSubject" required>
+            <textarea name="message" rows="4" data-placeholder-key="placeholderMessage" required></textarea>
+            <button type="submit" data-key="submitButton"></button>
         </form>
     </section>
 
@@ -54,6 +54,28 @@
                 alert('Error al enviar el correo');
                 console.error('Error:', error);
             });
+        });
+
+        // Recibir mensajes para cambiar el idioma
+        window.addEventListener('message', function (event) {
+            if (event.data.lang && event.data.translations) {
+                const elements = document.querySelectorAll('[data-key]');
+                elements.forEach(el => {
+                    const key = el.getAttribute('data-key');
+                    if (event.data.translations[key]) {
+                        el.innerHTML = event.data.translations[key];
+                    }
+                });
+
+                // Actualizar placeholders
+                const placeholders = document.querySelectorAll('[data-placeholder-key]');
+                placeholders.forEach(el => {
+                    const key = el.getAttribute('data-placeholder-key');
+                    if (event.data.translations[key]) {
+                        el.setAttribute('placeholder', event.data.translations[key]);
+                    }
+                });
+            }
         });
     </script>
 </body>

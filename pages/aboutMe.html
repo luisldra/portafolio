@@ -15,40 +15,27 @@
             <img src="../assets/images/image-about-me.svg" alt="Imagen sobre mí">
         </div>
         <div class="aboutMe__content">
-            <h2>¿Quien soy?</h2><br>
-            <p>Soy un apasionado de la tecnología, la innovación, la inteligencia artificial, los videojuegos y el
-                deporte. Actualmente, estudio Ingeniería de Sistemas y Computación en la Universidad de Caldas, donde he
-                desarrollado una sólida base en estas áreas. A lo largo de mi formación, he complementado mis estudios
-                con diversos cursos y programas que han potenciado mis habilidades y conocimientos.
-            <p>
-
-            <p>He tenido la oportunidad de participar en el Programa de Desarrollo Web de Alura Latam en colaboración
-                con
-                Oracle, además de otros cursos en línea que han enriquecido mi perfil profesional. Estos cursos no solo
-                me
-                han permitido mejorar mis habilidades técnicas, sino que también me han ayudado a crecer como persona.
-            </p>
-
-            <p>Me preocupo por mi desarrollo personal y he tomado cursos sobre manejo del tiempo y superación de la
-                procrastinación. Aunque aún lucho contra la procrastinación, el manejo eficiente del tiempo se ha
-                convertido
-                en una herramienta clave en mi vida, junto con el trabajo por objetivos y recompensas.</p>
-
-            <p>Además de mi interés por la tecnología, los videojuegos y el deporte ocupan un lugar especial en mi vida.
-                Soy
-                un entusiasta del baloncesto, deporte que practico con frecuencia y en el que participo con el equipo de
-                la
-                universidad en diversas competencias.</p>
-
-            <p>Mi objetivo es seguir creciendo tanto profesional como personalmente, aprovechando cada oportunidad para
-                aprender y mejorar, y contribuir de manera significativa en los campos de la tecnología y la innovación.
-            </p>
+            <h2 data-key="titleAboutMe"></h2><br>
+            <p data-key="textAboutMe"></p>
         </div>
 
         <script>
             window.addEventListener('message', function (event) {
                 if (event.data === 'scrollToSection') {
                     document.getElementById('aboutMe').scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+
+
+            window.addEventListener('message', function (event) {
+                if (event.data.lang && event.data.translations) {
+                    const elements = document.querySelectorAll('[data-key]');
+                    elements.forEach(el => {
+                        const key = el.getAttribute('data-key');
+                        if (event.data.translations[key]) {
+                            el.innerHTML = event.data.translations[key];
+                        }
+                    });
                 }
             });
         </script>

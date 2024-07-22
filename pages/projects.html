@@ -11,7 +11,7 @@
 </head>
 <body>
     <section id="projects" class="projects">
-        <h2>Proyectos</h2>
+        <h2 data-key="titleProjects"></h2>
         <br>
         <div class="background-image-left"></div>
         <div class="background-image-right"></div>
@@ -20,12 +20,12 @@
                 <div class="card-front">
                     <img src="../assets/images/encriptador.png" alt="Encriptador de Texto">
                     <br>
-                    <h3>Encriptador de texto | ALURA - LATAM</h3>
+                    <h3 data-key="project1"></h3>
                     <p> HTML - CSS - JavaScript </p>
                 </div>
                 <div class="card-back">
-                    <a href="https://luisldra.github.io/encriptadorTexto/" target="_blank" class="button-link">
-                        Visitar  <i class="fas fa-external-link-alt"></i>
+                    <a data-key="textback" href="https://luisldra.github.io/encriptadorTexto/" target="_blank" class="button-link">
+                          <i class="fas fa-external-link-alt"></i>
                     </a>
                 </div>
                 
@@ -33,12 +33,12 @@
             <div class="card" data-level="bueno">
                 <div class="card-front">
                     <img src="../assets/images/power.png" alt="Pagin Web POWER"><br>
-                    <h3>Pagina web | Power Basquetball Club</h3>
+                    <h3 data-key="project2"></h3>
                     <p> WordPress - PHP </p>
                 </div>
                 <div class="card-back">
-                    <a href="https://www.powerbasketballclub.com/" target="_blank" class="button-link">
-                        Visitar  <i class="fas fa-external-link-alt"></i>
+                    <a data-key="textback" href="https://www.powerbasketballclub.com/" target="_blank" class="button-link">
+                          <i class="fas fa-external-link-alt"></i>
                     </a>
                 </div>
                 
@@ -47,12 +47,12 @@
             <div class="card" data-level="intermedio">
                 <div class="card-front">
                     <img src="../assets/images/react-project.png" alt="HTML5"><br>
-                    <h3>Proyecto React | Administracion Flota</h3>
+                    <h3 data-key="project3"></h3>
                     <p> React - CSS - JavaScript</p>
                 </div>
                 <div class="card-back">
-                    <a href="https://github.com/luisldra/project_flotas_sw2_24" target="_blank" class="button-link">
-                        Repositorio  <i class="fas fa-external-link-alt"></i>
+                    <a data-key="textbackRepo" href="https://github.com/luisldra/project_flotas_sw2_24" target="_blank" class="button-link">
+                          <i class="fas fa-external-link-alt"></i>
                     </a>
                 </div>
                 
@@ -63,6 +63,18 @@
             window.addEventListener('message', function (event) {
                 if (event.data === 'scrollToSection') {
                     document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+
+            window.addEventListener('message', function (event) {
+                if (event.data.lang && event.data.translations) {
+                    const elements = document.querySelectorAll('[data-key]');
+                    elements.forEach(el => {
+                        const key = el.getAttribute('data-key');
+                        if (event.data.translations[key]) {
+                            el.innerHTML = event.data.translations[key];
+                        }
+                    });
                 }
             });
     </script>

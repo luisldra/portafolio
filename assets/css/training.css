@@ -12,7 +12,6 @@ body, html {
 
 .training {
     text-align: center;
-    width: 60%; /* Ajusta el ancho para centrar el contenido */
 }
 
 .card-container {
@@ -24,7 +23,7 @@ body, html {
 
 .card {
     position: relative;
-    width: 300px;
+    width: 400px;
     height: 400px;
     perspective: 1000px;
     margin: 10px; /* Ajusta el margen para mayor separación entre tarjetas */
@@ -59,12 +58,12 @@ body, html {
 }
 
 h2 {
-    font-size: 2rem !important;
+    font-size: 3rem !important;
     margin-bottom: 1rem !important;
 }
 
 h3 {
-    font-size: 1.5rem !important;
+    font-size: 2rem !important;
     margin:0.5rem 0 !important;
     color: #00171F;
 }

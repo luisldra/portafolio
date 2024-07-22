@@ -11,8 +11,9 @@ body, html {
 }
 
 h2 {
-    font-size: 2rem !important;
+    font-size: 3rem !important;
     margin-bottom: 1rem !important;
+    color: #00171F;
 }
 
 p {

@@ -10,9 +10,7 @@
 </head>
 <body>
     <section id="skills" class="skills">
-        <h2>Habilidades</h2>
-        <br>
-        <p>Estas son algunas de las habilidades que he adquirido a lo largo de mi formación y experiencia profesional.</p>
+        <h2 data-key="titleSkills"></h2>
         <br>
         <div class="background-image-left"></div>
         <div class="background-image-right"></div>
@@ -108,12 +106,25 @@
             </div>
         </div>
     </section>
-    <script src="../js/skills.js">
+    <script>
             window.addEventListener('message', function (event) {
                 if (event.data === 'scrollToSection') {
                     document.getElementById('skills').scrollIntoView({ behavior: 'smooth' });
                 }
             });
+
+            window.addEventListener('message', function (event) {
+                if (event.data.lang && event.data.translations) {
+                    const elements = document.querySelectorAll('[data-key]');
+                    elements.forEach(el => {
+                        const key = el.getAttribute('data-key');
+                        if (event.data.translations[key]) {
+                            el.innerHTML = event.data.translations[key];
+                        }
+                    });
+                }
+            });
     </script>
+    <script  src="../js/skills.js"> </script>
 </body>
 </html>

@@ -11,14 +11,15 @@
 
 <body>
     <section id="training" class="training">
-        <h2>Formación</h2>
+        <h2 data-key="titleTraining"></h2>
+        <br>
         <div class="card-container">
             <div class="card" data-level="bueno">
                 <div class="card-front">
                     <img src="../assets/images/udc_blanco.svg" alt="HTML5">
                     <br>
-                    <h3>Ingenieria de Sistemas y Computación</h3>
-                    <p>En curso</p>
+                    <h3 data-key="titleCareer"></h3>
+                    <p data-key="status"></p>
                 </div>
             </div>
         </div>
@@ -28,6 +29,18 @@
         window.addEventListener('message', function (event) {
             if (event.data === 'scrollToSection') {
                 document.getElementById('training').scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+
+        window.addEventListener('message', function (event) {
+            if (event.data.lang && event.data.translations) {
+                const elements = document.querySelectorAll('[data-key]');
+                elements.forEach(el => {
+                    const key = el.getAttribute('data-key');
+                    if (event.data.translations[key]) {
+                        el.innerHTML = event.data.translations[key];
+                    }
+                });
             }
         });
     </script>

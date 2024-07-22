@@ -177,7 +177,7 @@ html, body {
     position: fixed;
     bottom: 40px;
     right: 40px;
-    display: inline-flex;
+    display: none;
     align-items: center;
     justify-content: center;
     width: 60px;
@@ -197,4 +197,3 @@ html, body {
 .back-to-top i {
     font-size: 1.2rem;
 }
-
