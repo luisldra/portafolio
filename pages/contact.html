@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/contact.css">
+    <link rel="stylesheet" href="../assets/css/reset.css">
+
+</head>
+<body>
+    <section id="contact" class="contact">
+        <h2>Contacto</h2>
+
+        <!-- Apartado para el correo electrónico -->
+        <div class="contact-info">
+            <p>Puede contactarme directamente a través de mi correo electrónico:</p>
+            <p><a href="mailto:luisldra@gmail.com">luisldra@gmail.com</a></p>
+        </div>
+
+        <p>O puede completar el siguiente formulario y me pondré en contacto con usted lo antes posible.</p>
+        
+        
+        
+        <form id="contactForm" action="https://formspree.io/f/xqazanwj" method="post">
+            <input type="text" name="name" placeholder="Nombre " required>
+            <input type="email" name="email" placeholder="E-mail" required>
+            <input type="text" name="subject" placeholder="Asunto " required>
+            <textarea name="message" rows="4" placeholder="Mensaje " required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const formData = new FormData(this);
+
+            fetch(this.action, {
+                method: 'POST',
+                headers: { 'Accept': 'application/json' },
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.ok) {
+                    alert('Correo enviado correctamente');
+                    this.reset();
+                } else {
+                    alert('Error al enviar el correo');
+                }
+            })
+            .catch(error => {
+                alert('Error al enviar el correo');
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>

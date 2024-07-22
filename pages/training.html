@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/training.css">
+    <link rel="stylesheet" href="../assets/css/reset.css">
+
+</head>
+
+<body>
+    <section id="training" class="training">
+        <h2>Formación</h2>
+        <div class="card-container">
+            <div class="card" data-level="bueno">
+                <div class="card-front">
+                    <img src="../assets/images/udc_blanco.svg" alt="HTML5">
+                    <br>
+                    <h3>Ingenieria de Sistemas y Computación</h3>
+                    <p>En curso</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        window.addEventListener('message', function (event) {
+            if (event.data === 'scrollToSection') {
+                document.getElementById('training').scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    </script>
+</body>
+
+</html>

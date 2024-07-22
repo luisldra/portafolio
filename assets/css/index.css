@@ -1,0 +1,200 @@
+html, body {
+    height: 100%;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem; /* Ajusta el espacio alrededor del header según sea necesario */
+    background-color: rgb(1, 28, 40);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Estilo para el logo */
+.logo__header {
+    max-height: 50px; /* Ajusta la altura máxima del logo según sea necesario */
+}
+
+/* Estilo para la navegación */
+.nav__header {
+    display: flex;
+    align-items: center;
+}
+
+/* Estilo para los enlaces de navegación */
+.nav__header a {
+    margin-left: 1.5rem; /* Espacio entre los enlaces */
+    text-decoration: none;
+    color: #ffffff; /* Color de los enlaces */
+    font-size: 1rem; /* Tamaño de la fuente */
+    position: relative;
+}
+
+.nav__header a.active {
+    font-weight: bold; /* Estilo para el enlace activo */
+    color: #007EA7; /* Color del enlace activo */
+}
+
+/* Línea inferior para el enlace activo */
+.nav__header a.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -5px;
+    height: 2px;
+    background-color: #007EA7;
+}
+
+/* Estilo de la sección de language */
+.language {
+    margin-left: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+/* Estilo del toggle switch */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+}
+
+/* Ocultar el input de checkbox real */
+.toggle-input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Estilo del label del toggle switch */
+.toggle-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000000;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.4s;
+}
+
+/* Estilo del slider del toggle switch */
+.toggle-slider {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 22px;
+    height: 22px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.4s;
+}
+
+/* Estilo del texto del toggle switch */
+.toggle-label-text {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.8rem;
+    color: white;
+    pointer-events: none;
+}
+
+.toggle-label-text:first-child {
+    left: 8px;
+}
+
+.toggle-label-text:last-child {
+    right: 8px;
+}
+
+/* Cambiar el fondo del label cuando se activa el checkbox */
+.toggle-input:checked + .toggle-label {
+    background-color: #007EA7;
+}
+
+/* Mover el slider cuando se activa el checkbox */
+.toggle-input:checked + .toggle-label .toggle-slider {
+    transform: translateX(30px);
+}
+
+#contact {
+    background-color: #00171F;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #00171F;
+    color: #FFF;
+    text-align: center;
+}
+
+.footer-line {
+    width: 90%;
+    height: 1px;
+    background-color: #003459;
+    margin-bottom: 30px;
+}
+
+.footer .social-icons {
+    margin-bottom: 10px;
+}
+
+.footer .social-icons a {
+    margin: 0 10px;
+    color: #FFF;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.footer .social-icons a:hover {
+    color: #00A8E8;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.footer p i {
+    color: #00A8E8;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background-color: #007EA7;
+    color: #FFF;
+    text-decoration: none;
+    border-radius: 50%;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.back-to-top:hover {
+    background-color: #00171F;
+    transform: scale(1.1);
+}
+
+.back-to-top i {
+    font-size: 1.2rem;
+}
+

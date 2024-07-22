@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/projects.css">
+    <link rel="stylesheet" href="../assets/css/reset.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    <section id="projects" class="projects">
+        <h2>Proyectos</h2>
+        <br>
+        <div class="background-image-left"></div>
+        <div class="background-image-right"></div>
+        <div class="card-container">
+            <div class="card" data-level="bueno">
+                <div class="card-front">
+                    <img src="../assets/images/encriptador.png" alt="Encriptador de Texto">
+                    <br>
+                    <h3>Encriptador de texto | ALURA - LATAM</h3>
+                    <p> HTML - CSS - JavaScript </p>
+                </div>
+                <div class="card-back">
+                    <a href="https://luisldra.github.io/encriptadorTexto/" target="_blank" class="button-link">
+                        Visitar  <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+                
+            </div>
+            <div class="card" data-level="bueno">
+                <div class="card-front">
+                    <img src="../assets/images/power.png" alt="Pagin Web POWER"><br>
+                    <h3>Pagina web | Power Basquetball Club</h3>
+                    <p> WordPress - PHP </p>
+                </div>
+                <div class="card-back">
+                    <a href="https://www.powerbasketballclub.com/" target="_blank" class="button-link">
+                        Visitar  <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+                
+                
+            </div>
+            <div class="card" data-level="intermedio">
+                <div class="card-front">
+                    <img src="../assets/images/react-project.png" alt="HTML5"><br>
+                    <h3>Proyecto React | Administracion Flota</h3>
+                    <p> React - CSS - JavaScript</p>
+                </div>
+                <div class="card-back">
+                    <a href="https://github.com/luisldra/project_flotas_sw2_24" target="_blank" class="button-link">
+                        Repositorio  <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <script>
+            window.addEventListener('message', function (event) {
+                if (event.data === 'scrollToSection') {
+                    document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+    </script>
+</body>
+</html>

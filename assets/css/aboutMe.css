@@ -1,0 +1,46 @@
+html, body {
+    background-color: #00171F;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans', sans-serif !important;
+}
+
+.aboutMe {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 98vh;
+    width: 100%;
+    color: #fff;
+}
+
+.aboutMe__image {
+    max-width: 40%;
+}
+
+.aboutMe__image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.aboutMe__content {
+    max-width: 50%;
+}
+
+.aboutMe__content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.aboutMe__content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #c6a564; /* Cambia este color si es necesario */
+}
+
+.aboutMe__content p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}

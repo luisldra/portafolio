@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/home.css">
+    <link rel="stylesheet" href="../assets/css/reset.css">
+
+</head>
+<body>
+    <section id="home" class="home">
+        <div class="home__content">
+            <h1 data-key="welcome">Hola! Soy <span>Luis David Rodriguez Arias</span></h1>
+            <h2 data-key="role">ESTUDIANTE | Ingenieria de Sistemas y Computación</h2>
+            <p data-key="description">Estudiante de Ingenieria de Sistemas y Computacion apasionado por el Desarrollo Web. Como persona amante a los diseños intuitivos y estéticamente agradables busco crear proyectos que brinden la mejor experiencia para el usuario.</p>
+            <div class="buttons">
+                <a href="#" class="btn" data-key="download-cv">DESCARGAR CV</a>
+                <a href="#" class="btn" data-key="contact">CONTACTO</a>
+            </div>
+        </div>
+        <div class="home__image">
+            <img src="../assets/images/image-home.svg" alt="Imagen de perfil">
+        </div>
+    </section>
+    <div class="sidebar">
+        <a href="https://www.linkedin.com/in/ludaroar/" target="_blank"><img src="../assets/images/linkedin.png" alt="LinkedIn"></a>
+        <a href="https://github.com/luisldra" target="_blank"><img src="../assets/images/github.png" alt="GitHub"></a>
+    </div>
+
+    <script>
+        window.addEventListener('message', function(event) {
+            if (event.data === 'scrollToSection') {
+                document.getElementById('home').scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/skills.css">
+    <link rel="stylesheet" href="../assets/css/reset.css">
+
+
+</head>
+<body>
+    <section id="skills" class="skills">
+        <h2>Habilidades</h2>
+        <br>
+        <p>Estas son algunas de las habilidades que he adquirido a lo largo de mi formación y experiencia profesional.</p>
+        <br>
+        <div class="background-image-left"></div>
+        <div class="background-image-right"></div>
+        <div class="card-container">
+            <div class="card" data-level="bueno">
+                <div class="card-front">
+                    <img src="../assets/images/html.png" alt="HTML5">
+                    <br>
+                    <p>HTML 5</p>
+                </div>
+                <div class="card-back">
+                    <h3>Nivel</h3>
+                    <br>
+                    <div class="level"></div>
+                </div>
+            </div>
+            <div class="card" data-level="bueno">
+                <div class="card-front">
+                    <img src="../assets/images/css.png" alt="HTML5"><br>
+                    <p>CSS 3</p>
+                </div>
+                <div class="card-back">
+                    <h3>Nivel</h3>
+                    <br>
+                    <div class="level"></div>
+                </div>
+            </div>
+            <div class="card" data-level="intermedio">
+                <div class="card-front">
+                    <img src="../assets/images/java.png" alt="HTML5"><br>
+                    <p>JAVA</p>
+                </div>
+                <div class="card-back">
+                    <h3>Nivel</h3>
+                    <br>
+                    <div class="level"></div>
+                </div>
+            </div>
+            <div class="card" data-level="bueno">
+                <div class="card-front">
+                    <img src="../assets/images/js.png" alt="HTML5"><br>
+                    <p>JAVASCRIPT</p>
+                </div>
+                <div class="card-back">
+                    <h3>Nivel</h3>
+                    <br>
+                    <div class="level"></div>
+                </div>
+            </div>
+            <div class="card" data-level="bueno">
+                <div class="card-front">
+                    <img src="../assets/images/python.png" alt="HTML5"><br>
+                    <p>PYTHON</p>
+                </div>
+                <div class="card-back">
+                    <h3>Nivel</h3>
+                    <br>
+                    <div class="level"></div>
+                </div>
+            </div>
+            <div class="card" data-level="bueno">
+                <div class="card-front">
+                    <img src="../assets/images/react.png" alt="HTML5"><br>
+                    <p>REACT</p>
+                </div>
+                <div class="card-back">
+                    <h3>Nivel</h3>
+                    <br>
+                    <div class="level"></div>
+                </div>
+            </div>
+            <div class="card" data-level="bueno">
+                <div class="card-front">
+                    <img src="../assets/images/sql.png" alt="HTML5"><br>
+                    <p>SQL</p>
+                </div>
+                <div class="card-back">
+                    <h3>Nivel</h3>
+                    <br>
+                    <div class="level"></div>
+                </div>
+            </div>
+            <div class="card" data-level="bueno">
+                <div class="card-front">
+                    <img src="../assets/images/wordpress.svg" alt="HTML5"><br>
+                    <p>WORDPRESS</p>
+                </div>
+                <div class="card-back">
+                    <h3>Nivel</h3>
+                    <br> 
+                    <div class="level"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="../js/skills.js">
+            window.addEventListener('message', function (event) {
+                if (event.data === 'scrollToSection') {
+                    document.getElementById('skills').scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+    </script>
+</body>
+</html>
